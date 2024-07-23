@@ -177,13 +177,14 @@ input, select, textarea {
 	}
 	
 	.highlight {
-		color: green;
+		color: rgb(73, 182, 126);
 		text-decoration: none; /* Remove underline if needed */
 	}
 	
 	.highlight:hover {
 		text-decoration: underline; /* Optional: underline on hover */
 	}
+	
 
 	sub {
 		font-size: 0.8em;
