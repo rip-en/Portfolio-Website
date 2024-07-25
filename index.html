@@ -10,6 +10,7 @@
 
     gtag('config', 'G-XXDV6WXDC1');
     </script>
+
     <title>Ebrahim Nazmul</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -21,6 +22,7 @@
     <meta property="og:url" content="https://ebnaz.com" />
     <meta property="og:type" content="website" />
     <link rel="stylesheet" href="assets/css/main.css" />
+
     <style>
         .button {
             background-color: transparent;
@@ -39,7 +41,7 @@
         }
 
         .hover-text {
-			top: -100%;
+            top: -100%;
             background-color: transparent;
             border: none;
             position: absolute;
@@ -64,41 +66,52 @@
             transition: 1.5s;
         }
 
-		.cv-button {
-			display: inline-block;
-			background-color: rgb(88, 215, 150); /* Green color for button background */
-			color: white; /* Text color */
-			padding: 10px 20px; /* Padding inside button */
-			font-size: 1.2em; /* Font size */
-			text-align: center; /* Center text */
-			text-decoration: none; /* Remove underline */
-			border-radius: 5px; /* Rounded corners */
-			border: 2px solid rgb(88, 215, 150); /* Border to match background color */
-			transition: background-color 0.3s, color 0.3s; /* Smooth color transitions */
-		}
-		
-		.cv-button:hover {
-			background-color: white; /* Change background on hover */
-			color: rgb(88, 215, 150); /* Change text color on hover */
-			border: 2px solid rgb(88, 215, 150); /* Maintain border color on hover */
-		}
+        .cv-button {
+            display: inline-block;
+            background-color: rgb(88, 215, 150); /* Green color for button background */
+            color: white; /* Text color */
+            padding: 10px 20px; /* Padding inside button */
+            font-size: 1.2em; /* Font size */
+            text-align: center; /* Center text */
+            text-decoration: none; /* Remove underline */
+            border-radius: 5px; /* Rounded corners */
+            border: 2px solid rgb(88, 215, 150); /* Border to match background color */
+            transition: background-color 0.3s, color 0.3s; /* Smooth color transitions */
+        }
+        
+        .cv-button:hover {
+            background-color: white; /* Change background on hover */
+            color: rgb(88, 215, 150); /* Change text color on hover */
+            border: 2px solid rgb(88, 215, 150); /* Maintain border color on hover */
+        }
 
+        #header {
+            z-index: 2; /* Ensure header is above particles */
+        }
     </style>
+
+    <script src="assets/js/particles.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            particlesJS.load('particles-js', 'assets/particles.json', function() {
+                console.log('particles.js loaded - callback');
+            });
+        });
+    </script>
+
 </head>
 <body class="is-preload">
-
     <!-- Header -->
     <header id="header">
         <div class="inner">
             <a href="https://www.linkedin.com/in/ebrahimnazmul/" class="image avatar"><img src="images/avatar.jpg" alt="Ebrahim Nazmul" /></a>
-            <h1><strong>Ebrahim Nazmul</strong>
+            <h1><strong>Ebrahim Nazmul</strong></h1> <!-- Ensure proper closing of h1 tag -->
             <h2>currently a SWE Fellow @ <a href="https://www.linkedin.com/company/headstarterai/" class="highlight">Headstarter AI</a></h2>
         </div>
     </header>
 
     <!-- Main -->
     <div id="main">
-
         <!-- One -->
         <section id="one">
             <header class="major">
@@ -161,6 +174,7 @@
             </ul>
         </div>
     </footer>
+    <div id="particles-js"></div>
 
     <!-- Scripts -->
     <script src="assets/js/jquery.min.js"></script>
@@ -169,6 +183,7 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/particles.js"></script>
 
 </body>
 </html>

@@ -177,7 +177,7 @@ input, select, textarea {
 	}
 	
 	.highlight {
-		color: rgb(73, 182, 126);
+		color: rgb(88, 215, 150);
 		text-decoration: none; /* Remove underline if needed */
 	}
 	
@@ -1521,6 +1521,23 @@ input, select, textarea {
 							padding-top: 3em;
 						}
 
+		}
+
+		/* Add this CSS to position the particles background */
+		#particles-js {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: -1; /* Ensure it is behind other content */
+			pointer-events: auto; /* Allow interaction */
+		}
+
+		/* Add this CSS to reset margins and padding */
+		body, html {
+			margin: 0;
+			padding: 0;
 		}
 
 		@media screen and (max-width: 480px) {
@@ -3229,3 +3246,25 @@ input, select, textarea {
 			}
 
 	}
+
+/* Add this CSS to position the particles background */
+#particles-js {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1; /* Ensure it is behind other content */
+	pointer-events: auto; /* Allow interaction */
+}
+
+#main {
+	position: relative;
+	z-index: 1; /* Ensure main content is above particles */
+}
+
+/* Add this CSS to reset margins and padding */
+body, html {
+	margin: 0;
+	padding: 0;
+}
