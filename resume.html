@@ -40,11 +40,31 @@
             width: 100%;
             height: 100%;
         }
+
+        #header {
+            z-index: 2;
+            overflow: hidden; /* Ensure particles are contained within the header */
+        }
+        
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1; /* Ensure particles are behind the content */
+        }
+        
+        #header .inner {
+            position: relative;
+            z-index: 2;
+        }
     </style>
 </head>
 <body class="is-preload">
     <!-- Header -->
     <header id="header">
+        <div id="particles-js"></div>
         <div class="inner">
             <a href="https://www.linkedin.com/in/ebrahimnazmul/" class="image avatar"><img src="images/avatar.jpg" alt="Ebrahim Nazmul" /></a>
             <h1><strong>Ebrahim Nazmul</strong></h1>
@@ -80,6 +100,14 @@
     
 
     <!-- Scripts -->
+    <script src="assets/js/particles.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            particlesJS.load('particles-js', 'assets/particles.json', function() {
+                console.log('particles.js loaded - callback');
+            });
+        });
+    </script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.poptrox.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
