@@ -24,6 +24,16 @@
     <link rel="stylesheet" href="assets/css/main.css" />
 
     <style>
+        section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+    
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
         .button {
             background-color: transparent;
             border: none;
@@ -83,6 +93,90 @@
             background-color: white; /* Change background on hover */
             color: rgb(88, 215, 150); /* Change text color on hover */
             border: 2px solid rgb(88, 215, 150); /* Maintain border color on hover */
+        }
+
+        .skills {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2em;
+            padding: 2em 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .skill-icon {
+            position: relative;
+            width: calc(33.333% - 2em);
+            height: 180px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(88, 215, 150, 0.3);
+        }
+        .skill-icon img {
+            width: 50%;
+            height: auto;
+            object-fit: contain;
+            transition: all 0.3s ease;
+        }
+        .skill-icon:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 0 30px rgba(88, 215, 150, 0.6);
+        }
+        .skill-icon:hover img {
+            transform: scale(1.1);
+        }
+        .skill-info {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-10px);
+            background-color: rgba(40, 40, 40, 0.95);
+            padding: 1.2em;
+            border-radius: 15px;
+            width: 280px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        }
+        .skill-icon:hover .skill-info {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) translateY(0);
+        }
+        .skill-info h3 {
+            margin-top: 0;
+            color: rgb(88, 215, 150);
+            font-size: 1.3em;
+        }
+        .skill-info p {
+            font-size: 1em;
+            color: #ddd;
+            margin-bottom: 0;
+        }
+        @media screen and (max-width: 1200px) {
+            .skill-icon {
+                width: calc(50% - 2em);
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .skill-icon {
+                width: calc(100% - 2em);
+                height: 160px;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .skill-icon {
+                height: 140px;
+            }
+            .skill-info {
+                width: 240px;
+            }
         }
 
         #header {
@@ -167,6 +261,54 @@
             </div>
         </section>
 
+        <section id="three">
+            <h2>Skills</h2>
+            <div class="skills">
+                <div class="skill-icon">
+                    <img src="images/python.png" alt="Python">
+                    <div class="skill-info">
+                        <h3>Python</h3>
+                        <p>Proficient in Python with experience in AI, data analysis, and web scraping. Reached 4 Kyu on Codewars with Python.</p>
+                    </div>
+                </div>
+                <div class="skill-icon">
+                    <img src="images/frontend.png" alt="HTML/CSS/JS">
+                    <div class="skill-info">
+                        <h3>HTML/CSS/JS</h3>
+                        <p>Skilled in front-end web development. Experience in creating responsive and interactive websites using modern web technologies.</p>
+                    </div>
+                </div>
+                <div class="skill-icon">
+                    <img src="images/csharp.png" alt="C#">
+                    <div class="skill-info">
+                        <h3>C#</h3>
+                        <p>Created various scripts and functions, ranging from procedural generation and custom systems.</p>
+                    </div>
+                </div>
+                <div class="skill-icon">
+                    <img src="images/tensorflow.png" alt="TensorFlow">
+                    <div class="skill-info">
+                        <h3>TensorFlow</h3>
+                        <p>Experienced with various machine learning models, including LSTM, KNN and linear regression. Currently expanding knowledge in more advanced models and techniques.</p>
+                    </div>
+                </div>
+                <div class="skill-icon">
+                    <img src="images/unity-icon.png" alt="Unity">
+                    <div class="skill-info">
+                        <h3>Unity</h3>
+                        <p>Experienced in Unity, created various games, most notably my NEA project.</p>
+                    </div>
+                </div>
+                <div class="skill-icon">
+                    <img src="images/mysql.png" alt="MySQL">
+                    <div class="skill-info">
+                        <h3>MySQL</h3>
+                        <p>Proficient in database management and SQL queries. Used MySQL in projects like the NEA Multiplayer FPS Game for user and match data.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     <!-- Footer -->
     <footer id="footer">
         <div class="inner">
@@ -188,6 +330,31 @@
         document.addEventListener('DOMContentLoaded', (event) => {
             particlesJS.load('particles-js', 'assets/particles.json', function() {
                 console.log('particles.js loaded - callback');
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const sections = document.querySelectorAll('section');
+            
+            const options = {
+                root: null,
+                rootMargin: '-40% 0px -40% 0px',
+                threshold: 0
+            };
+    
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, options);
+    
+            sections.forEach(section => {
+                observer.observe(section);
             });
         });
     </script>
