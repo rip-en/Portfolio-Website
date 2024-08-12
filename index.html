@@ -22,6 +22,7 @@
     <meta property="og:url" content="https://ebnaz.com" />
     <meta property="og:type" content="website" />
     <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
     <style>
         section {
@@ -197,6 +198,45 @@
             position: relative;
             z-index: 2;
         }
+
+        #dark-mode-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            cursor: pointer;
+            font-size: 24px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        #dark-mode-toggle:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+        }
+
+        body.dark-mode #header {
+            background-color: #000;
+        }
+
+        body.dark-mode .skill-icon {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        body.dark-mode .skill-info {
+            background-color: rgba(60, 60, 60, 0.95);
+        }
     </style>
 </head>
 
@@ -242,25 +282,33 @@
             <div class="row">
                 <!-- Group 1 -->
                 <div class="col-6 col-12-xsmall work-item group">
-                    <a href="images/fulls/nea1.png" class="image fit thumb" data-caption="Coursework for my Computer Science A-Level"><img src="images/thumbs/01.png" alt="" /></a>
-                    <a href="images/fulls/nea2.png" class="image fit thumb" data-caption="Profile and Leaderboard System"><img src="images/thumbs/01-1.png" alt="" style="display:none;" /></a>
-                    <a href="images/fulls/nea3.png" class="image fit thumb" data-caption="Users database in MySQL"><img src="images/thumbs/01-2.png" alt="" style="display:none;" /></a>
-                    <a href="images/fulls/nea4.png" class="image fit thumb" data-caption="Matches database which is used to achieve Cross-table parameterised SQL"><img src="images/thumbs/01-2.png" alt="" style="display:none;" /></a>
+                    <a href="images/fulls/nea1.png" class="image fit thumb" data-caption="Coursework for my Computer Science A-Level"><img src="images/thumbs/01.png" alt="Ebrahim Nazmul - NEA Multiplayer FPS Game" style="width:475px; height: 300px;"/></a>
+                    <a href="images/fulls/nea2.png" class="image fit thumb" data-caption="Profile and Leaderboard System"><img src="images/thumbs/01-1.png" alt="Ebrahim Nazmul - NEA Multiplayer FPS Game" style="display:none;" /></a>
+                    <a href="images/fulls/nea3.png" class="image fit thumb" data-caption="Users database in MySQL"><img src="images/thumbs/01-2.png" alt="Ebrahim Nazmul - NEA Multiplayer FPS Game" style="display:none;" /></a>
+                    <a href="images/fulls/nea4.png" class="image fit thumb" data-caption="Matches database which is used to achieve Cross-table parameterised SQL"><img src="images/thumbs/01-2.png" alt="Ebrahim Nazmul - NEA Multiplayer FPS Game" style="display:none; height: 800px;" /></a>
                     <h3><a class='highlight' href='https://github.com/rip-en/NEA-2024---Invictus'>NEA - Multiplayer FPS Game</a></h3>
                     <p>Used the Photon library alongside MySQL to create a fully functional zombie round-based shooter with an account, leaderboard and shop system in Unity.</p>
                     <p><b>C#, PHP, SQL</b></p>
                 </div>
                 <!-- Group 2 -->
                 <div class="col-6 col-12-xsmall work-item group">
-                    <a href="images/fulls/inventory.png" class="image fit thumb" data-caption="Built for Headstarter Week 2 Project"><img src="images/thumbs/inventory.png" alt="" /></a>
+                    <a href="images/fulls/inventory.png" class="image fit thumb" data-caption="Built for Headstarter Week 2 Project"><img src="images/fulls/inventory.png" alt="Ebrahim Nazmul - Inventory Management System" style="width:475px; height: 300px;" /></a>
                     <h3><a class='highlight' href='https://github.com/rip-en/Inventory-Management-App'>Inventory Management System</a></h3>
-                    <p>An inventory management application using Next.js, Material UI and Firebase, deployed on Vercel.</p>
+                    <p>An personal inventory management application using Next.js, Material UI and Firebase, deployed on Vercel.</p>
                     <p><a href="https://inventory-management-app-three-bice.vercel.app">Try it Here!</a></p>
                     <p><b>Next.js, Material UI, Firebase</b></p>
                 </div>
                 <!-- Group 3 -->
                 <div class="col-6 col-12-xsmall work-item group">
-                    <a href="images/fulls/website1.png" class="image fit thumb" data-caption="Built for Headstarter Week 1 Project"><img src="images/thumbs/06.jpg" alt="" /></a>
+                    <a href="images/thumbs/chatbot.png" class="image fit thumb" data-caption="Built for Headstarter Week 3 Project"><img src="images/thumbs/chatbot.png" alt="Ebrahim Nazmul - Degree Apprenticeship Chatbot" style="height: 300px;"/></a>
+                    <h3><a class='highlight' href='https://github.com/rip-en/ApprenteaseSupportBot'>Degree Apprenticeship Chatbot</a></h3>
+                    <p>AI Customer Support Bot tailored for the Apprentease community, used to help users on them achieving degree apprenticeships.</p>
+                    <p><a href="https://apprentease-support-bot.vercel.app">Try it Here!</a></p>
+                    <p><b>Next.js, React, OpenAI</b></p>
+                </div>
+                <!-- Group 4 -->
+                <div class="col-6 col-12-xsmall work-item group">
+                    <a href="images/fulls/website1.png" class="image fit thumb" data-caption="Built for Headstarter Week 1 Project"><img src="images/thumbs/06.jpg" style="width:475px; height: 300px;"/></a>
                     <h3><a class='highlight' href='https://github.com/rip-en/Portfolio-Website'>Portfolio Website</a></h3>
                     <p>The website you're currently on!</p>
                     <p><b>HTML, CSS, JS</b></p>
@@ -311,6 +359,13 @@
                     <div class="skill-info">
                         <h3>MySQL</h3>
                         <p>Proficient in database management and SQL queries. Used MySQL in projects like the NEA Multiplayer FPS Game for user and match data.</p>
+                    </div>
+                </div>
+                <div class="skill-icon">
+                    <img src="images/nextjs.png" alt="MySQL">
+                    <div class="skill-info">
+                        <h3>Next.js</h3>
+                        <p>Built various projects using Next.js, including an inventory management system and a chatbot.</p>
                     </div>
                 </div>
             </div>
@@ -365,6 +420,25 @@
             });
         });
     </script>
+    <script>
+        // Add this new script
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const darkModeToggle = document.getElementById('dark-mode-toggle');
+            const body = document.body;
+            const icon = darkModeToggle.querySelector('i');
+
+            darkModeToggle.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+                if (body.classList.contains('dark-mode')) {
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                } else {
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                }
+            });
+        });
+    </script>
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/jquery.poptrox.min.js"></script>
     <script src="assets/js/browser.min.js"></script>
@@ -373,5 +447,8 @@
     <script src="assets/js/main.js"></script>
     <script src="assets/js/particles.js"></script>
 
+<div id="dark-mode-toggle">
+    <i class="fas fa-moon"></i>
+</div>
 </body>
 </html>
