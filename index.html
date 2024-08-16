@@ -35,6 +35,30 @@
             opacity: 1;
             transform: translateY(0);
         }
+        
+        .typewriter h1 {
+            overflow: hidden; /* Ensures the content is not revealed until the animation */
+            border-right: .15em solid orange; /* The typwriter cursor */
+            white-space: nowrap; /* Keeps the content on a single line */
+            margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+            letter-spacing: .15em; /* Adjust as needed */
+            animation: 
+              typing 3.5s steps(40, end),
+              blink-caret .75s step-end infinite;
+          }
+          
+          /* The typing effect */
+          @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+          }
+          
+          /* The typewriter cursor effect */
+          @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: orange; }
+          }
+
         .button {
             background-color: transparent;
             border: none;
@@ -282,7 +306,14 @@
             <div class="row">
                 <!-- Group 1 -->
                 <div class="col-6 col-12-xsmall work-item group">
-                    <a href="images/fulls/nea1.png" class="image fit thumb" data-caption="Coursework for my Computer Science A-Level"><img src="images/thumbs/01.png" alt="Ebrahim Nazmul - NEA Multiplayer FPS Game" style="width:475px; height: 300px;"/></a>
+                    <a href="images/fulls/apprentease.png" class="image fit thumb" data-caption="Coursework for my Computer Science A-Level"><img src="images/thumbs/apprentease.png" alt="Ebrahim Nazmul - ApprentEase"/></a>
+                    <h3><a class='highlight' href='https://apprentease.vercel.app'>ApprentEase</a></h3>
+                    <p>Website for the Apprentease community, used to help users on them achieving degree apprenticeships.</p>
+                    <p><b>Next.js, Tailwind, Firebase</b></p>
+                </div>
+                <!-- Group 2 -->
+                <div class="col-6 col-12-xsmall work-item group">
+                    <a href="images/fulls/nea1.png" class="image fit thumb" data-caption="Coursework for my Computer Science A-Level"><img src="images/thumbs/01.png" alt="Ebrahim Nazmul - NEA Multiplayer FPS Game"/></a>
                     <a href="images/fulls/nea2.png" class="image fit thumb" data-caption="Profile and Leaderboard System"><img src="images/thumbs/01-1.png" alt="Ebrahim Nazmul - NEA Multiplayer FPS Game" style="display:none;" /></a>
                     <a href="images/fulls/nea3.png" class="image fit thumb" data-caption="Users database in MySQL"><img src="images/thumbs/01-2.png" alt="Ebrahim Nazmul - NEA Multiplayer FPS Game" style="display:none;" /></a>
                     <a href="images/fulls/nea4.png" class="image fit thumb" data-caption="Matches database which is used to achieve Cross-table parameterised SQL"><img src="images/thumbs/01-2.png" alt="Ebrahim Nazmul - NEA Multiplayer FPS Game" style="display:none; height: 800px;" /></a>
@@ -290,25 +321,25 @@
                     <p>Used the Photon library alongside MySQL to create a fully functional zombie round-based shooter with an account, leaderboard and shop system in Unity.</p>
                     <p><b>C#, PHP, SQL</b></p>
                 </div>
-                <!-- Group 2 -->
-                <div class="col-6 col-12-xsmall work-item group">
-                    <a href="images/fulls/inventory.png" class="image fit thumb" data-caption="Built for Headstarter Week 2 Project"><img src="images/fulls/inventory.png" alt="Ebrahim Nazmul - Inventory Management System" style="width:475px; height: 300px;" /></a>
-                    <h3><a class='highlight' href='https://github.com/rip-en/Inventory-Management-App'>Inventory Management System</a></h3>
-                    <p>An personal inventory management application using Next.js, Material UI and Firebase, deployed on Vercel.</p>
-                    <p><a href="https://inventory-management-app-three-bice.vercel.app">Try it Here!</a></p>
-                    <p><b>Next.js, Material UI, Firebase</b></p>
-                </div>
                 <!-- Group 3 -->
                 <div class="col-6 col-12-xsmall work-item group">
-                    <a href="images/thumbs/chatbot.png" class="image fit thumb" data-caption="Built for Headstarter Week 3 Project"><img src="images/thumbs/chatbot.png" alt="Ebrahim Nazmul - Degree Apprenticeship Chatbot" style="height: 300px;"/></a>
+                    <a href="images/fulls/inventory.png" class="image fit thumb" data-caption="Built for Headstarter Week 2 Project"><img src="images/fulls/inventory.png" alt="Ebrahim Nazmul - Inventory Management System" /></a>
+                    <h3><a class='highlight' href='https://github.com/rip-en/Inventory-Management-App'>Inventory Management System</a></h3>
+                    <p>An personal inventory management application using Next.js, Material UI and Firebase, deployed on Vercel.</p>
+                    <p><a href="https://voidinventory.vercel.app">Try it Here!</a></p>
+                    <p><b>Next.js, Material UI, Firebase</b></p>
+                </div>
+                <!-- Group 4 -->
+                <div class="col-6 col-12-xsmall work-item group">
+                    <a href="images/thumbs/chatbot.png" class="image fit thumb" data-caption="Built for Headstarter Week 3 Project"><img src="images/thumbs/chatbot.png" alt="Ebrahim Nazmul - Degree Apprenticeship Chatbot"/></a>
                     <h3><a class='highlight' href='https://github.com/rip-en/ApprenteaseSupportBot'>Degree Apprenticeship Chatbot</a></h3>
                     <p>AI Customer Support Bot tailored for the Apprentease community, used to help users on them achieving degree apprenticeships.</p>
                     <p><a href="https://apprentease-support-bot.vercel.app">Try it Here!</a></p>
                     <p><b>Next.js, React, OpenAI</b></p>
                 </div>
-                <!-- Group 4 -->
+                <!-- Group 5 -->
                 <div class="col-6 col-12-xsmall work-item group">
-                    <a href="images/fulls/website1.png" class="image fit thumb" data-caption="Built for Headstarter Week 1 Project"><img src="images/thumbs/06.jpg" style="width:475px; height: 300px;"/></a>
+                    <a href="images/fulls/website1.png" class="image fit thumb" data-caption="Built for Headstarter Week 1 Project"><img src="images/thumbs/06.jpg"/></a>
                     <h3><a class='highlight' href='https://github.com/rip-en/Portfolio-Website'>Portfolio Website</a></h3>
                     <p>The website you're currently on!</p>
                     <p><b>HTML, CSS, JS</b></p>
