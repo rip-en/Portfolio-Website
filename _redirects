@@ -1,0 +1,7 @@
+# Redirect all traffic to index.html for SPA behavior
+# This ensures that direct links to sections work properly
+/*    /index.html   200
+
+# Force HTTPS
+http://ebrahimnazmul.com/*  https://ebrahimnazmul.com/:splat  301!
+http://www.ebrahimnazmul.com/*  https://ebrahimnazmul.com/:splat  301!

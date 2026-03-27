@@ -1,0 +1,38 @@
+# Cloudflare Pages configuration for static site
+name = "portfolio-website"
+compatibility_date = "2024-01-15"
+
+# Static site configuration
+[env.production]
+route = { pattern = "*", zone_name = "your-domain.com" }
+
+# Build configuration for static assets
+[build]
+command = ""
+publish = "."
+
+# Custom headers for better performance
+[[headers]]
+for = "/*"
+[headers.values]
+X-Frame-Options = "DENY"
+X-Content-Type-Options = "nosniff"
+X-XSS-Protection = "1; mode=block"
+Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Cache static assets
+[[headers]]
+for = "/assets/*"
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+for = "/images/*"
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
+# Security headers for HTML files
+[[headers]]
+for = "/*.html"
+[headers.values]
+Content-Security-Policy = "default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self' https://formspree.io;"

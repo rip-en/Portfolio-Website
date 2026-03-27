@@ -1,489 +1,1034 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXDV6WXDC1"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-XXDV6WXDC1');
-    </script>
-
-    <title>Ebrahim Nazmul</title>
+    <title>Ebrahim Nazmul | Developer</title>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <meta name="description" content="Ebrahim Nazmul is a Software Engineer Fellow at Headstarter AI with expertise in AI and game design. Explore projects and more on my personal portfolio website." />
-    <meta name="keywords" content="Ebrahim Nazmul, Software Engineer, AI, Game Design, Portfolio, Headstarter AI" />
-    <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="Ebrahim Nazmul - Software Engineer Fellow at Headstarter AI" />
-    <meta property="og:description" content="Explore the portfolio of Ebrahim Nazmul, a Software Engineer Fellow at Headstarter AI, with expertise in AI and game design." />
-    <meta property="og:url" content="https://ebnaz.com" />
-    <meta property="og:type" content="website" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Ebrahim Nazmul - Software Developer" />
+    <meta name="keywords" content="Ebrahim Nazmul, Game Developer, Software Engineer, Unity, C#, AI, Machine Learning" />
+    <meta name="author" content="Ebrahim Nazmul" />
+    <meta name="theme-color" content="#000000" />
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
     <style>
-        section {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1s ease-out, transform 1s ease-out;
-        }
-    
-        section.visible {
-            opacity: 1;
-            transform: translateY(0);
+        :root {
+            --black: #000000;
+            --white: #ffffff;
+            --gray-50: #fafafa;
+            --gray-100: #f5f5f5;
+            --gray-200: #e5e5e5;
+            --gray-300: #d4d4d4;
+            --gray-400: #a3a3a3;
+            --gray-500: #737373;
+            --gray-600: #525252;
+            --gray-700: #404040;
+            --gray-800: #262626;
+            --gray-900: #171717;
+            
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+            
+            --transition-fast: 150ms ease;
+            --transition-normal: 250ms ease;
+            --transition-slow: 500ms ease;
+            
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
         }
         
-        .typewriter h1 {
-            overflow: hidden; /* Ensures the content is not revealed until the animation */
-            border-right: .15em solid orange; /* The typwriter cursor */
-            white-space: nowrap; /* Keeps the content on a single line */
-            margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-            letter-spacing: .15em; /* Adjust as needed */
-            animation: 
-              typing 3.5s steps(40, end),
-              blink-caret .75s step-end infinite;
-          }
-          
-          /* The typing effect */
-          @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-          }
-          
-          /* The typewriter cursor effect */
-          @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: orange; }
-          }
-
-        .button {
-            background-color: transparent;
-            border: none;
-            --border-right: 6px;
-            --animation-color: rgb(88, 215, 150);
-            --fs-size: 2em;
-            letter-spacing: 1px;
-            text-decoration: none;
-            font-size: 2em; 
-            position: relative;
-            overflow: hidden;
-            color: rgba(255, 255, 255, 0.583);
-            display: inline-block; 
-            cursor: pointer;
+        /* Dark mode variables */
+        [data-theme="dark"] {
+            --black: #ffffff;
+            --white: #000000;
+            --gray-50: #171717;
+            --gray-100: #262626;
+            --gray-200: #404040;
+            --gray-300: #525252;
+            --gray-400: #737373;
+            --gray-500: #a3a3a3;
+            --gray-600: #d4d4d4;
+            --gray-700: #e5e5e5;
+            --gray-800: #f5f5f5;
+            --gray-900: #fafafa;
         }
-
-        .hover-text {
-            top: -100%;
-            background-color: transparent;
-            border: none;
-            position: absolute;
+        
+        * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
-            content: attr(data-text);
-            color: var(--animation-color);
-            width: 0%;
-            inset: 0;
-            border-right: var(--border-right) solid var(--animation-color);
-            overflow: hidden;
-            transition: 0.5s;
-            -webkit-text-stroke: 0.05em var(--animation-color);
-            white-space: nowrap;
-            font-size: 1em;
-        }
-
-        .button:hover .hover-text {
-            background-color: transparent;
-            border: none;
-            width: 100%;
-            filter: drop-shadow(0 0 5px var(--animation-color));
-            transition: 1.5s;
-        }
-
-        .cv-button {
-            display: inline-block;
-            background-color: rgb(88, 215, 150); /* Green color for button background */
-            color: white; /* Text color */
-            padding: 10px 20px; /* Padding inside button */
-            font-size: 1.2em; /* Font size */
-            text-align: center; /* Center text */
-            text-decoration: none; /* Remove underline */
-            border-radius: 5px; /* Rounded corners */
-            border: 2px solid rgb(88, 215, 150); /* Border to match background color */
-            transition: background-color 0.3s, color 0.3s; /* Smooth color transitions */
         }
         
-        .cv-button:hover {
-            background-color: white; /* Change background on hover */
-            color: rgb(88, 215, 150); /* Change text color on hover */
-            border: 2px solid rgb(88, 215, 150); /* Maintain border color on hover */
+        ::selection {
+            background-color: var(--black);
+            color: var(--white);
         }
-
-        .skills {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 2em;
-            padding: 2em 0;
-            max-width: 1200px;
-            margin: 0 auto;
+        
+        html {
+            scroll-behavior: smooth;
         }
-        .skill-icon {
+        
+        body {
+            background-color: var(--white);
+            color: var(--black);
+            font-family: var(--font-sans);
+            font-weight: 400;
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
             position: relative;
-            width: calc(33.333% - 2em);
-            height: 180px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 0 20px rgba(88, 215, 150, 0.3);
-        }
-        .skill-icon img {
-            width: 50%;
-            height: auto;
-            object-fit: contain;
-            transition: all 0.3s ease;
-        }
-        .skill-icon:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 0 30px rgba(88, 215, 150, 0.6);
-        }
-        .skill-icon:hover img {
-            transform: scale(1.1);
-        }
-        .skill-info {
-            position: absolute;
-            bottom: 100%;
-            left: 50%;
-            transform: translateX(-50%) translateY(-10px);
-            background-color: rgba(40, 40, 40, 0.95);
-            padding: 1.2em;
-            border-radius: 15px;
-            width: 280px;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 1000;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-        }
-        .skill-icon:hover .skill-info {
-            opacity: 1;
-            visibility: visible;
-            transform: translateX(-50%) translateY(0);
-        }
-        .skill-info h3 {
-            margin-top: 0;
-            color: rgb(88, 215, 150);
-            font-size: 1.3em;
-        }
-        .skill-info p {
-            font-size: 1em;
-            color: #ddd;
-            margin-bottom: 0;
-        }
-        @media screen and (max-width: 1200px) {
-            .skill-icon {
-                width: calc(50% - 2em);
-            }
-        }
-        @media screen and (max-width: 768px) {
-            .skill-icon {
-                width: calc(100% - 2em);
-                height: 160px;
-            }
-        }
-        @media screen and (max-width: 480px) {
-            .skill-icon {
-                height: 140px;
-            }
-            .skill-info {
-                width: 240px;
-            }
-        }
-
-        #header {
-            z-index: 2;
-            overflow: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            transition: background-color var(--transition-normal), color var(--transition-normal);
         }
         
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
+        /* Cursor */
+        .cursor {
+            position: fixed;
             top: 0;
             left: 0;
-            z-index: 1; 
+            width: 20px;
+            height: 20px;
+            background-color: var(--black);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transition: transform var(--transition-fast), background-color var(--transition-normal);
+            transform: translate(-50%, -50%);
         }
         
-        #header .inner {
+        .cursor.hover {
+            transform: translate(-50%, -50%) scale(1.5);
+        }
+        
+        /* Dark mode cursor */
+        [data-theme="dark"] .cursor {
+            background-color: var(--white);
+        }
+        
+        /* Hide default cursor */
+        * {
+            cursor: none !important;
+        }
+        
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+        }
+        
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--gray-200);
+            transition: all var(--transition-normal);
+        }
+        
+        /* Dark mode navigation */
+        [data-theme="dark"] .nav {
+            background-color: rgba(0, 0, 0, 0.95);
+            border-bottom-color: var(--gray-700);
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 0;
+        }
+        
+        /* Theme toggle button */
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--gray-300);
+            color: var(--gray-600);
+            padding: 0.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            font-size: 1rem;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .theme-toggle:hover {
+            border-color: var(--black);
+            color: var(--black);
+            background-color: var(--gray-50);
+        }
+        
+        [data-theme="dark"] .theme-toggle {
+            border-color: var(--gray-600);
+            color: var(--gray-300);
+        }
+        
+        [data-theme="dark"] .theme-toggle:hover {
+            border-color: var(--white);
+            color: var(--white);
+            background-color: var(--gray-800);
+        }
+        
+        .theme-icon {
+            transition: transform var(--transition-fast);
+        }
+        
+        .theme-toggle:hover .theme-icon {
+            transform: rotate(180deg);
+        }
+        
+        .logo {
+            font-family: var(--font-mono);
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--black);
+            text-decoration: none;
+            transition: opacity var(--transition-fast);
+        }
+        
+        .logo:hover {
+            opacity: 0.7;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-link {
+            color: var(--gray-600);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            letter-spacing: 0.025em;
+            transition: color var(--transition-fast);
+            position: relative;
+        }
+        
+        .nav-link:hover {
+            color: var(--black);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--black);
+            transition: width var(--transition-normal);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 6rem;
+        }
+        
+        .hero-content {
+            width: 100%;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.025em;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-description {
+            font-size: clamp(0.85rem, 1.8vw, 1rem);
+            color: var(--gray-500);
+            margin-bottom: 2rem;
+            font-weight: 400;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background-color: var(--black);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all var(--transition-normal);
+            border-radius: 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: var(--gray-800);
+            transition: left var(--transition-normal);
+            z-index: -1;
+        }
+        
+        .hero-cta:hover::before {
+            left: 0;
+        }
+        
+        .hero-cta:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Sections */
+        .section {
+            padding: 6rem 0;
+        }
+        
+        .section-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+            letter-spacing: -0.025em;
+        }
+        
+        /* Grid */
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+        
+        /* Cards */
+        .card {
+            padding: 2.5rem;
+            border: 1px solid var(--gray-200);
+            transition: all var(--transition-normal);
+            position: relative;
+            background-color: var(--white);
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--black);
+            opacity: 0;
+            transition: opacity var(--transition-normal);
+            z-index: 1;
+        }
+        
+        .card:hover::before {
+            opacity: 0.02;
+        }
+        
+        .card:hover {
+            border-color: var(--black);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .card-content {
             position: relative;
             z-index: 2;
         }
-
-        #dark-mode-toggle {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-            cursor: pointer;
-            font-size: 24px;
-            color: #fff;
-            background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
+        
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--black);
+        }
+        
+        .card-description {
+            color: var(--gray-600);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .card-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .tech-tag {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background-color: var(--gray-100);
+            color: var(--gray-700);
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 0.025em;
+            text-transform: uppercase;
+            border-radius: 0;
+            transition: all var(--transition-fast);
+        }
+        
+        .tech-tag:hover {
+            background-color: var(--black);
+            color: var(--white);
+        }
+        
+        /* Contact Section */
+        .contact-links {
             display: flex;
             justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-link {
+            display: flex;
             align-items: center;
-            transition: background-color 0.3s;
+            gap: 0.5rem;
+            color: var(--gray-600);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color var(--transition-fast);
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--gray-200);
         }
-
-        #dark-mode-toggle:hover {
-            background-color: rgba(0, 0, 0, 0.7);
+        
+        .contact-link:hover {
+            color: var(--black);
+            border-color: var(--black);
         }
-
-        body.dark-mode {
-            background-color: #1a1a1a;
-            color: #f0f0f0;
+        
+        /* Forms */
+        .form {
+            max-width: 500px;
+            margin: 0 auto;
         }
-
-        body.dark-mode #header {
-            background-color: #000;
+        
+        .form-group {
+            margin-bottom: 1.5rem;
         }
-
-        body.dark-mode .skill-icon {
-            background: rgba(255, 255, 255, 0.2);
+        
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--black);
+            font-size: 0.875rem;
+            letter-spacing: 0.025em;
+            text-transform: uppercase;
         }
-
-        body.dark-mode .skill-info {
-            background-color: rgba(60, 60, 60, 0.95);
+        
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--gray-300);
+            background-color: var(--white);
+            color: var(--black);
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            transition: all var(--transition-fast);
+            border-radius: 0;
+        }
+        
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--black);
+            box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.05);
+        }
+        
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .form-button {
+            background-color: var(--black);
+            color: var(--white);
+            border: none;
+            padding: 1rem 2rem;
+            font-family: var(--font-sans);
+            font-weight: 500;
+            font-size: 0.875rem;
+            letter-spacing: 0.025em;
+            text-transform: uppercase;
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+        
+        .form-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: var(--gray-800);
+            transition: left var(--transition-normal);
+            z-index: 1;
+        }
+        
+        .form-button:hover::before {
+            left: 0;
+        }
+        
+        .form-button:hover {
+            transform: translateY(-2px);
+        }
+        
+        .form-button span {
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* Footer */
+        .footer {
+            border-top: 1px solid var(--gray-200);
+            padding: 3rem 0;
+            text-align: center;
+            color: var(--gray-500);
+            font-size: 0.875rem;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .nav-content {
+                padding: 1rem 0;
+            }
+            
+            .nav-menu {
+                gap: 1rem;
+            }
+            
+            .hero {
+                padding-top: 4rem;
+            }
+            
+            .section {
+                padding: 4rem 0;
+            }
+            
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            
+            .card {
+                padding: 2rem;
+            }
+            
+            .contact-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .card {
+                padding: 1.5rem;
+            }
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .fade-in-up-delay-1 {
+            animation: fadeInUp 0.6s ease-out 0.1s both;
+        }
+        
+        .fade-in-up-delay-2 {
+            animation: fadeInUp 0.6s ease-out 0.2s both;
+        }
+        
+        .fade-in-up-delay-3 {
+            animation: fadeInUp 0.6s ease-out 0.3s both;
+        }
+        
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: var(--gray-100);
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--gray-400);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--gray-600);
         }
     </style>
 </head>
-
-<body class="is-preload">
-    <!-- Header -->
-    <header id="header" style="background-color: black;">
-        <div id="particles-js"></div>
-        <div class="inner">
-            <a href="https://www.linkedin.com/in/ebrahimnazmul/" class="image avatar"><img src="images/avatar.jpg" alt="Ebrahim Nazmul" /></a>
-            <h1><strong>Ebrahim Nazmul</strong></h1> 
-            <h2>working on projects</h2>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#home" class="logo">enaz.dev</a>
+                <div style="display: flex; align-items: center; gap: 2rem;">
+                    <ul class="nav-menu">
+                        <li><a href="#projects" class="nav-link">Projects</a></li>
+                        <li><a href="#skills" class="nav-link">Skills</a></li>
+                    </ul>
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <span class="theme-icon" id="theme-icon">☀</span>
+                    </button>
+                </div>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Main -->
-    <div id="main">
-        <!-- One -->
-        <section id="one">
-            <header class="major">
-                <h2 class="button">
-                    <span class="actual-text">
-                        &nbsp;Hi, I'm Ebrahim&nbsp;
-                    </span>
-                    <span aria-hidden="true" class="hover-text">
-                        &nbsp;Hi, I'm Ebrahim&nbsp;
-                    </span>
-                </h2>
-                
-            </header>
-            <p>My passion for Computer Science started from games, which led me to find Scratch and learn to code. 
-            Pursuing Computer Science at GCSE deepened my fascination, and I learned <b>Python</b>, becoming particularly interested in artificial intelligence. 
-            This led me to gain experience with <b>TensorFlow</b> and <b>Matplotlib</b>, as well as libraries such as <b>BeautifulSoup</b>, <b>Pygame</b>, <b>Numpy</b> etc.<br>
-            At A-Level, I expanded my skill set by learning <b>C#</b> and <b>Unity</b> to develop a first-person shooter game, blending my love for technology with creativity. 
-            My passion is to work in <b>AI</b> or <b>game design</b>, combining my theoretical knowledge and practical skills to innovate in these fields.<br>
-            Currently, I'm on my gap year, dedicating my time to expanding my skill set and exploring new technologies. I've recently learnt <b>React</b> and <b>Next.js</b> whilst working as a 
-            Software Engineer Fellow at <a href="https://www.linkedin.com/company/headstarterai/" class="highlight">Headstarter AI</a>, 
-            and built <a href="https://www.apprentease.co" class="highlight">ApprentEase</a>, an apprenticeship platform used by 400+ users.
-        </p>
-            
-            <ul class="actions">
-                <li><a href="resume.html" class="cv-button">View CV</a></li>
-            </ul>
-        </section>
-
-        <!-- Two -->
-        <section id="two">
-            <h2>Projects</h2>
-            <div class="row">
-                <!-- Group 1 -->
-                <div class="col-6 col-12-xsmall work-item group">
-                    <a href="images/fulls/apprentease.png" class="image fit thumb" data-caption="ApprentEase Home Page"><img src="images/thumbs/apprentease.png" alt="Ebrahim Nazmul - ApprentEase"/></a>
-                    <h3><a class='highlight' href='https://www.apprentease.co'>ApprentEase</a></h3>
-                    <p>Website for the Apprentease community, used to help users on them achieving apprenticeships. Currently on 400+ users.</p>
-                    <p><b>Next.js, Material UI, Firebase</b></p>
-                </div>
-                <!-- Group 2 -->
-                <div class="col-6 col-12-xsmall work-item group">
-                    <a href="images/fulls/nea1.png" class="image fit thumb" data-caption="Coursework for my Computer Science A-Level"><img src="images/thumbs/01.png" alt="Ebrahim Nazmul - NEA Multiplayer FPS Game"/></a>
-                    <a href="images/fulls/nea2.png" class="image fit thumb" data-caption="Profile and Leaderboard System"><img src="images/thumbs/01-1.png" alt="Ebrahim Nazmul - NEA Multiplayer FPS Game" style="display:none;" /></a>
-                    <a href="images/fulls/nea3.png" class="image fit thumb" data-caption="Users database in MySQL"><img src="images/thumbs/01-2.png" alt="Ebrahim Nazmul - NEA Multiplayer FPS Game" style="display:none;" /></a>
-                    <a href="images/fulls/nea4.png" class="image fit thumb" data-caption="Matches database which is used to achieve Cross-table parameterised SQL"><img src="images/thumbs/01-2.png" alt="Ebrahim Nazmul - NEA Multiplayer FPS Game" style="display:none; height: 800px;" /></a>
-                    <h3><a class='highlight' href='https://github.com/rip-en/NEA-2024---Invictus'>NEA - Multiplayer FPS Game</a></h3>
-                    <p>Used the Photon library alongside MySQL to create a zombie round-based shooter with an account, leaderboard and shop system in Unity.</p>
-                    <p><b>C#, PHP, SQL</b></p>
-                </div>
-                <!-- Group 3 -->
-                <div class="col-6 col-12-xsmall work-item group">
-                    <a href="images/fulls/inventory.png" class="image fit thumb" data-caption="Built for Headstarter Week 2 Project"><img src="images/fulls/inventory.png" alt="Ebrahim Nazmul - Inventory Management System" /></a>
-                    <h3><a class='highlight' href='https://github.com/rip-en/Inventory-Management-App'>Inventory Management System</a></h3>
-                    <p>An personal inventory management application using Next.js, Material UI and Firebase, deployed on Vercel.</p>
-                    <p><a href="https://voidinventory.vercel.app">Try it Here!</a></p>
-                    <p><b>Next.js, Material UI, Firebase</b></p>
-                </div>
-                <!-- Group 4 -->
-                <div class="col-6 col-12-xsmall work-item group">
-                    <a href="images/thumbs/chatbot.png" class="image fit thumb" data-caption="Built for Headstarter Week 3 Project"><img src="images/thumbs/chatbot.png" alt="Ebrahim Nazmul - Degree Apprenticeship Chatbot"/></a>
-                    <h3><a class='highlight' href='https://github.com/rip-en/ApprenteaseSupportBot'>Degree Apprenticeship Chatbot</a></h3>
-                    <p>AI Customer Support Bot tailored for the Apprentease community, used to help users on them achieving degree apprenticeships.</p>
-                    <p><a href="https://apprentease-support-bot.vercel.app">Try it Here!</a></p>
-                    <p><b>Next.js, React, OpenAI</b></p>
-                </div>
-                <!-- Group 5 -->
-                <div class="col-6 col-12-xsmall work-item group">
-                    <a href="images/fulls/website1.png" class="image fit thumb" data-caption="Built for Headstarter Week 1 Project"><img src="images/thumbs/06.jpg"/></a>
-                    <h3><a class='highlight' href='https://github.com/rip-en/Portfolio-Website'>Portfolio Website</a></h3>
-                    <p>The website you're currently on!</p>
-                    <p><b>HTML, CSS, JS</b></p>
-                </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1 class="hero-title">Ebrahim Nazmul</h1>
+                <p class="hero-subtitle">Software Developer</p>
+                <p class="hero-description">
+                    Passionate about AI, game development, and creating meaningful digital experiences. Currently focusing on full-stack development and AI engineering.
+                </p>
+                <a href="#projects" class="hero-cta">
+                    <span>View Projects</span>
+                    <span>↓</span>
+                </a>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="three">
-            <h2>Skills</h2>
-            <div class="skills">
-                <div class="skill-icon">
-                    <img src="images/python.png" alt="Python">
-                    <div class="skill-info">
-                        <h3>Python</h3>
-                        <p>Proficient in Python with experience in AI, data analysis, and web scraping. Reached 4 Kyu on Codewars with Python.</p>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in-up">Projects</h2>
+            <div class="grid grid-2">
+                <div class="card fade-in-up-delay-1">
+                    <div class="card-content">
+                        <h3 class="card-title">ApprentEase Platform</h3>
+                        <p class="card-description">
+                            A comprehensive community platform helping users achieve apprenticeships, serving 400+ active users with real-time matching and guidance systems.
+                        </p>
+                        <div class="card-tech">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">Material UI</span>
+                            <span class="tech-tag">Firebase</span>
+                        </div>
+                        <p style="margin-top: 1rem;">
+                            <a href="https://www.apprentease.co" target="_blank" style="color: var(--black); text-decoration: none; font-weight: 500;">
+                                View Live →
+                            </a>
+                        </p>
                     </div>
                 </div>
-                <div class="skill-icon">
-                    <img src="images/frontend.png" alt="HTML/CSS/JS">
-                    <div class="skill-info">
-                        <h3>HTML/CSS/JS</h3>
-                        <p>Skilled in front-end web development. Experience in creating responsive and interactive websites using modern web technologies.</p>
+
+                <div class="card fade-in-up-delay-2">
+                    <div class="card-content">
+                        <h3 class="card-title">Multiplayer FPS Game</h3>
+                        <p class="card-description">
+                            A zombie round-based shooter with comprehensive account system, leaderboards, and in-game shop. Built from scratch in Unity.
+                        </p>
+                        <div class="card-tech">
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">Unity</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                        </div>
+                        <p style="margin-top: 1rem;">
+                            <a href="https://github.com/rip-en/NEA-2024---Invictus" target="_blank" style="color: var(--black); text-decoration: none; font-weight: 500;">
+                                View Code →
+                            </a>
+                        </p>
                     </div>
                 </div>
-                <div class="skill-icon">
-                    <img src="images/csharp.png" alt="C#">
-                    <div class="skill-info">
-                        <h3>C#</h3>
-                        <p>Created various scripts and functions, ranging from procedural generation and custom systems.</p>
+
+                <div class="card fade-in-up-delay-3">
+                    <div class="card-content">
+                        <h3 class="card-title">AI Support Chatbot</h3>
+                        <p class="card-description">
+                            Intelligent customer support bot for the ApprentEase community, helping users with degree apprenticeship queries using OpenAI.
+                        </p>
+                        <div class="card-tech">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">OpenAI</span>
+                            <span class="tech-tag">React</span>
+                        </div>
+                        <p style="margin-top: 1rem;">
+                            <a href="https://apprentease-support-bot.vercel.app" target="_blank" style="color: var(--black); text-decoration: none; font-weight: 500;">
+                                Try Bot →
+                            </a>
+                        </p>
                     </div>
                 </div>
-                <div class="skill-icon">
-                    <img src="images/tensorflow.png" alt="TensorFlow">
-                    <div class="skill-info">
-                        <h3>TensorFlow</h3>
-                        <p>Experienced with various machine learning models, including LSTM, KNN and linear regression. Currently expanding knowledge in more advanced models and techniques.</p>
-                    </div>
-                </div>
-                <div class="skill-icon">
-                    <img src="images/unity-icon.png" alt="Unity">
-                    <div class="skill-info">
-                        <h3>Unity</h3>
-                        <p>Experienced in Unity, created various games, most notably my NEA project.</p>
-                    </div>
-                </div>
-                <div class="skill-icon">
-                    <img src="images/mysql.png" alt="MySQL">
-                    <div class="skill-info">
-                        <h3>MySQL</h3>
-                        <p>Proficient in database management and SQL queries. Used MySQL in projects like the NEA Multiplayer FPS Game for user and match data.</p>
-                    </div>
-                </div>
-                <div class="skill-icon">
-                    <img src="images/nextjs.png" alt="MySQL">
-                    <div class="skill-info">
-                        <h3>Next.js</h3>
-                        <p>Built various projects using Next.js, including an inventory management system and a chatbot.</p>
+
+                <div class="card fade-in-up-delay-3">
+                    <div class="card-content">
+                        <h3 class="card-title">Inventory Management System</h3>
+                        <p class="card-description">
+                            Full-stack inventory management application with real-time updates, user authentication, and comprehensive dashboard.
+                        </p>
+                        <div class="card-tech">
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Material UI</span>
+                        </div>
+                        <p style="margin-top: 1rem;">
+                            <a href="https://voidinventory.vercel.app" target="_blank" style="color: var(--black); text-decoration: none; font-weight: 500;">
+                                Live Demo →
+                            </a>
+                        </p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title fade-in-up">Skills</h2>
+            <div class="grid grid-3">
+                <div class="card fade-in-up-delay-1">
+                    <div class="card-content">
+                        <h3 class="card-title">Game Development</h3>
+                        <div class="card-tech">
+                            <span class="tech-tag">Unity</span>
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">Game Design</span>
+                            <span class="tech-tag">3D Modeling</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in-up-delay-2">
+                    <div class="card-content">
+                        <h3 class="card-title">Programming Languages</h3>
+                        <div class="card-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">SQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in-up-delay-3">
+                    <div class="card-content">
+                        <h3 class="card-title">Web Development</h3>
+                        <div class="card-tech">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Next.js</span>
+                            <span class="tech-tag">HTML/CSS</span>
+                            <span class="tech-tag">Material UI</span>
+                            <span class="tech-tag">Responsive Design</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in-up-delay-1">
+                    <div class="card-content">
+                        <h3 class="card-title">AI & Machine Learning</h3>
+                        <div class="card-tech">
+                            <span class="tech-tag">TensorFlow</span>
+                            <span class="tech-tag">OpenAI</span>
+                            <span class="tech-tag">NumPy</span>
+                            <span class="tech-tag">Matplotlib</span>
+                            <span class="tech-tag">Data Analysis</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card fade-in-up-delay-2">
+                    <div class="card-content">
+                        <h3 class="card-title">Tools & Platforms</h3>
+                        <div class="card-tech">
+                            <span class="tech-tag">Firebase</span>
+                            <span class="tech-tag">Git</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Vercel</span>
+                            <span class="tech-tag">VS Code</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Footer -->
-    <footer id="footer">
-        <div class="inner">
-            <ul class="icons">
-                <li><a href="https://github.com/rip-en" class="icon brands fa-github"><span class="label">Github</span></a></li>
-                <li><a href="https://www.linkedin.com/in/ebrahimnazmul/" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
-                <li><a href="mailto:ebnazmul06@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-            </ul>
-            <ul class="copyright">
-                <li>&copy; Ebrahim Nazmul 2024</li>
-            </ul>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Ebrahim Nazmul. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="assets/js/particles.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            particlesJS.load('particles-js', 'assets/particles.json', function() {
-                console.log('particles.js loaded - callback');
-            });
-        });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const sections = document.querySelectorAll('section');
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const body = document.body;
+        const nav = document.querySelector('.nav');
+        
+        // Check for saved theme preference or default to dark mode
+        const currentTheme = localStorage.getItem('theme') || 'dark';
+        body.setAttribute('data-theme', currentTheme);
+        themeIcon.textContent = currentTheme === 'dark' ? '☀' : '☽';
+        
+        // Update navigation on theme change
+        function updateNavTheme(theme) {
+            if (theme === 'dark') {
+                nav.style.backgroundColor = 'rgba(0, 0, 0, 0.95)';
+                nav.style.borderBottomColor = 'var(--gray-700)';
+            } else {
+                nav.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                nav.style.borderBottomColor = 'var(--gray-200)';
+            }
+        }
+        
+        // Initialize nav theme
+        updateNavTheme(currentTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
             
-            const options = {
-                root: null,
-                rootMargin: '-40% 0px -40% 0px',
-                threshold: 0
-            };
-    
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    } else {
-                        entry.target.classList.remove('visible');
-                    }
-                });
-            }, options);
-    
-            sections.forEach(section => {
-                observer.observe(section);
+            body.setAttribute('data-theme', newTheme);
+            themeIcon.textContent = newTheme === 'dark' ? '☀' : '☽';
+            updateNavTheme(newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+        
+        // Custom cursor
+        const cursor = document.querySelector('.cursor');
+        let mouseX = 0;
+        let mouseY = 0;
+        let cursorX = 0;
+        let cursorY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function animateCursor() {
+            const speed = 0.1;
+            cursorX += (mouseX - cursorX) * speed;
+            cursorY += (mouseY - cursorY) * speed;
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        // Cursor hover effects
+        const hoverElements = document.querySelectorAll('a, button, .card, .tech-tag');
+        hoverElements.forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover');
+            });
+            element.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
             });
         });
-    </script>
-    <script>
-        // Add this new script
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const darkModeToggle = document.getElementById('dark-mode-toggle');
-            const body = document.body;
-            const icon = darkModeToggle.querySelector('i');
 
-            darkModeToggle.addEventListener('click', () => {
-                body.classList.toggle('dark-mode');
-                if (body.classList.contains('dark-mode')) {
-                    icon.classList.remove('fa-moon');
-                    icon.classList.add('fa-sun');
-                } else {
-                    icon.classList.remove('fa-sun');
-                    icon.classList.add('fa-moon');
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
             });
         });
-    </script>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.poptrox.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/particles.js"></script>
 
-<div id="dark-mode-toggle">
-    <i class="fas fa-moon"></i>
-</div>
+        // Navigation background on scroll
+        window.addEventListener('scroll', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            if (window.scrollY > 50) {
+                if (currentTheme === 'dark') {
+                    nav.style.backgroundColor = 'rgba(0, 0, 0, 0.98)';
+                    nav.style.borderBottomColor = 'var(--gray-600)';
+                } else {
+                    nav.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+                    nav.style.borderBottomColor = 'var(--gray-300)';
+                }
+            } else {
+                updateNavTheme(currentTheme);
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.fade-in, .fade-in-up, .fade-in-up-delay-1, .fade-in-up-delay-2, .fade-in-up-delay-3');
+            animatedElements.forEach(element => {
+                // Set initial state
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                
+                // Observe element
+                observer.observe(element);
+            });
+        });
+
+
+        // Card tilt effect
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 10;
+                const rotateY = (centerX - x) / 10;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`;
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+            });
+        });
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+            }
+        });
+
+        // Tech tag random hover colors
+        document.querySelectorAll('.tech-tag').forEach(tag => {
+            tag.addEventListener('mouseenter', () => {
+                const randomDelay = Math.random() * 200;
+                setTimeout(() => {
+                    tag.style.backgroundColor = 'var(--black)';
+                    tag.style.color = 'var(--white)';
+                }, randomDelay);
+            });
+        });
+    </script>
 </body>
-</html>
+</html> 
