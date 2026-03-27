@@ -3,19 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "photos:manifest": "node scripts/generate-photo-manifest.mjs",
+    "predev": "node scripts/generate-photo-manifest.mjs",
+    "prebuild": "node scripts/generate-photo-manifest.mjs",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "image-size": "^2.0.2",
     "lucide-react": "^0.294.0",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
+    "image-size": "^2.0.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",

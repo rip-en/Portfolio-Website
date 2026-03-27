@@ -8,8 +8,8 @@ export const metadata: Metadata = {
   description: 'Photography portfolio — ebzi.jpg on Instagram.',
 }
 
-export default async function PhotographyPage() {
-  const photos = await getPortfolioPhotos()
+export default function PhotographyPage() {
+  const photos = getPortfolioPhotos()
 
   return (
     <div className="relative min-h-screen bg-neutral-950">

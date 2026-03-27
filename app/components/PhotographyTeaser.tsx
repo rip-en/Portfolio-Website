@@ -5,8 +5,8 @@ import { getHomePreviewPhotos } from '@/lib/portfolio-photos'
 
 const PREVIEW_SIZES = '(max-width: 640px) 100vw, 33vw'
 
-export default async function PhotographyTeaser() {
-  const preview = await getHomePreviewPhotos()
+export default function PhotographyTeaser() {
+  const preview = getHomePreviewPhotos()
 
   return (
     <section
