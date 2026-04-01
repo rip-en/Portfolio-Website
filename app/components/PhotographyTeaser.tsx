@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { getHomePreviewPhotos } from '@/lib/portfolio-photos'
+import { cn } from '@/lib/utils'
 
 const PREVIEW_SIZES = '(max-width: 640px) 100vw, 33vw'
 
@@ -9,56 +10,63 @@ export default function PhotographyTeaser() {
   const preview = getHomePreviewPhotos()
 
   return (
-    <section
-      id="photography"
-      className="py-24 md:py-32 border-t border-gray-200 dark:border-gray-800"
-    >
-      <div className="max-w-6xl mx-auto px-8">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8 mb-12">
+    <section id="photography" className="home-surface home-surface--photo py-24 md:py-32">
+      <div className="home-surface-inner max-w-6xl mx-auto px-6 md:px-8">
+        <div className="mb-12 flex flex-col gap-8 md:mb-14 md:flex-row md:items-end md:justify-between">
           <div>
-            <p className="font-mono text-xs tracking-[0.2em] text-gray-500 dark:text-gray-400 uppercase mb-3">
+            <p className="mb-3 font-mono text-xs uppercase tracking-[0.22em] text-muted-foreground">
               Photography
             </p>
-            <h2 className="text-2xl md:text-3xl font-semibold tracking-tight text-black dark:text-white">
-              Still learning, still shooting
-            </h2>
-            <p className="mt-3 text-gray-600 dark:text-gray-400 max-w-md text-sm md:text-base leading-relaxed">
-              A small set of frames while the portfolio grows. Full gallery lives at{' '}
-              <span className="font-mono text-gray-800 dark:text-gray-300">/jpg</span>.
+            <p className="mt-3 max-w-md text-sm leading-relaxed text-muted-foreground md:text-base">
+              Here are a few selected shots. See the full gallery at{' '}
+              <span className="font-mono text-foreground/80">/jpg</span>.
             </p>
           </div>
           <Link
             href="/jpg"
-            className="group inline-flex items-center gap-2 font-mono text-sm text-black dark:text-white border border-gray-300 dark:border-gray-600 px-5 py-3 hover:bg-gray-50 dark:hover:bg-gray-900 transition-colors duration-200 shrink-0"
+            className={cn(
+              'group inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-md border border-input',
+              'bg-background/90 px-8 text-sm font-medium font-mono shadow-sm backdrop-blur-sm',
+              'transition-all duration-200 hover:border-foreground/25 hover:bg-accent hover:text-accent-foreground hover:shadow-md'
+            )}
           >
             Open gallery
             <ArrowRight
               size={16}
               className="transition-transform duration-200 group-hover:translate-x-0.5"
+              aria-hidden
             />
           </Link>
         </div>
 
         {preview.length > 0 && (
-          <div className="columns-1 sm:columns-3 gap-3 [column-gap:12px]">
-            {preview.map((photo, index) => (
-              <Link
-                key={photo.src}
-                href="/jpg"
-                className="break-inside-avoid mb-3 block overflow-hidden bg-gray-100 dark:bg-gray-900 group"
-              >
-                <Image
-                  src={photo.src}
-                  width={photo.width}
-                  height={photo.height}
-                  alt="Photography preview"
-                  className="w-full h-auto transition-transform duration-500 group-hover:scale-[1.02]"
-                  sizes={PREVIEW_SIZES}
-                  priority={index === 0}
-                  quality={72}
-                />
-              </Link>
-            ))}
+          <div
+            className={cn(
+              'rounded-2xl border border-border/60 bg-card/40 p-3 sm:p-4 md:p-5',
+              'shadow-[inset_0_1px_0_0_hsl(var(--border)/0.5),0_20px_50px_-28px_rgba(15,23,42,0.12)]',
+              'ring-1 ring-black/[0.04] dark:bg-card/25 dark:shadow-[inset_0_1px_0_0_hsl(var(--border)/0.35),0_24px_56px_-28px_rgba(0,0,0,0.55)] dark:ring-white/[0.05]'
+            )}
+          >
+            <div className="columns-1 gap-3 [column-gap:12px] sm:columns-3">
+              {preview.map((photo, index) => (
+                <Link
+                  key={photo.src}
+                  href="/jpg"
+                  className="group mb-3 block overflow-hidden rounded-lg bg-muted/40 break-inside-avoid ring-1 ring-black/[0.04] dark:ring-white/[0.06]"
+                >
+                  <Image
+                    src={photo.src}
+                    width={photo.width}
+                    height={photo.height}
+                    alt="Photography preview"
+                    className="h-auto w-full transition-transform duration-500 group-hover:scale-[1.02]"
+                    sizes={PREVIEW_SIZES}
+                    priority={index === 0}
+                    quality={72}
+                  />
+                </Link>
+              ))}
+            </div>
           </div>
         )}
       </div>

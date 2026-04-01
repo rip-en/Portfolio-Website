@@ -50,7 +50,7 @@ function GalleryPhotoInner({ photo, alt, sizes, priority }: Props) {
         sizes={sizes}
         priority={priority}
         quality={72}
-        onLoadingComplete={reveal}
+        onLoad={reveal}
         onError={reveal}
       />
     </figure>

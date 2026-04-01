@@ -5,11 +5,13 @@ import Skills from './components/Skills'
 
 export default function Home() {
   return (
-    <>
+    <div className="relative bg-background">
       <Hero />
-      <Projects />
-      <PhotographyTeaser />
-      <Skills />
-    </>
+      <div className="relative z-10 bg-background">
+        <Projects />
+        <PhotographyTeaser />
+        <Skills />
+      </div>
+    </div>
   )
 }

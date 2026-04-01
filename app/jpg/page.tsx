@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { getPortfolioPhotos } from '@/lib/portfolio-photos'
-import { GalleryInfinite } from './GalleryInfinite'
+import { Gallery } from './Gallery'
 import { JpgFloatingBar } from './JpgFloatingBar'
 
 export const metadata: Metadata = {
@@ -15,7 +15,7 @@ export default function PhotographyPage() {
     <div className="relative min-h-screen bg-neutral-950">
       <JpgFloatingBar />
 
-      <GalleryInfinite photos={photos} />
+      <Gallery photos={photos} />
 
       {photos.length === 0 && (
         <p className="absolute inset-0 flex items-center justify-center text-sm text-neutral-500 font-mono px-8 text-center">
