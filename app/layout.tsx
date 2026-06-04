@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter, JetBrains_Mono } from 'next/font/google'
 import './globals.css'
 import { ConditionalNav } from './components/ConditionalNav'
@@ -19,8 +19,12 @@ export const metadata: Metadata = {
   description: 'Ebrahim Nazmul — freelance developer. Web, games, and AI-driven products.',
   keywords: 'Ebrahim Nazmul, Freelance Developer, Web Development, Unity, C#, AI',
   authors: [{ name: 'Ebrahim Nazmul' }],
+}
+
+export const viewport: Viewport = {
   themeColor: '#000000',
-  viewport: 'width=device-width, initial-scale=1',
+  width: 'device-width',
+  initialScale: 1,
 }
 
 export default function RootLayout({
