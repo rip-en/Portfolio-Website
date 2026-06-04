@@ -4,6 +4,8 @@ export type PortfolioPhoto = {
   src: string
   width: number
   height: number
+  /** Inline base64 LQIP for an instant blurred preview (generated at build time). */
+  blurDataURL?: string
 }
 
 /**
